@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="myApp"> 
+    
+    <!-- for sierra: new IP for this is http://3.17.109.57:8080 --> 
+    
+<head>
+    <title>User Login and Sessions</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+    <script src="/javascripts/my_app.js"></script>
+</head>
+        
+<body>  
+    <div class="inner-box">
+        <div ng-controller="myController">
+            <h1 id="welcomeText">Welcome. You are Logged In as
+                <%= username %> <!-- it gets these vars from the index.js-->   <!-- TODO: I vote that we don't use EJS because it's like a goto in C, a confusing pile of poop -->
+            </h1>
+            <a id="logoutLink" href="/logout">Log Out</a>
+            <a id="editLink" href="/user">&nbsp Edit User</a>
+        </div>
+        <hr>
+        <span id="indexMsg">
+            <%= msg %> 
+        </span>
+        <hr>
+        <span id="colorText">
+        Favorite Color: 
+            <%= color %>
+          </span>
+    </div>
+</body>
+      
+</html>
