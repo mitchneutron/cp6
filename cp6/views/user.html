@@ -1,31 +1,26 @@
 <!doctype html>
 <html ng-app="myApp">
-    
+
 <head>
     <title>CP6: CoolNotes - User</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
 </head>
-        
-<body>  
+
+<body>
     <div class="inner-box">
         <div class="form-container" ng-controller="myController">
             <h1 id="sectionTitle">User Profile</h1>
             <form method="POST" action="/user/update">
-                <label>Username:</label>
-                <input type="text" id="username" name="username" ng-model="user.username" disabled><br>
-                <label>Email:</label>
-                <input type="email" id="email" name="email" ng-model="user.email"><br>          
-                <label>Favorite Color:</label>
-                <input type="text" id="color" name="color" ng-model="user.color"> <!-- this is how you do one little text replacement without <p> and without jQuery!! -->
+                <label>Your Note Here:</label>
+                <br>
+                <textarea style="width:90%;max-width:90%;max-height:30%;" name="Text1" cols="40" rows="5" id="note" name="note" ng-model="user.note"> </textarea>
+                <!-- this is how you do one little text replacement without <p> and without jQuery!! -->
                 <br>
                 <input class="main-button" type="submit" id="save" value="Save">
             </form>
         </div>
         <br>
-        <form method="POST" action="/user/delete">
-            <input class="main-button" type="submit" id="delete" value="Delete User">
-        </form>
         <hr>
         <span id="userMsg"> <!-- this displays what name you are authenticated as, or whether the user was updated successfully -->
         <%= msg %>
