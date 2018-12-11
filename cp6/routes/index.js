@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-// var mongoose = require('mongoose');  //copied from old lab until we decide what we're gonna store in the DB
-// var Candidate = mongoose.model('Candidate');  //also need to make a new model file for this object and register it in the db inside the server's app.js
+var mongoose = require('mongoose');
+var User = mongoose.model('User');
 
 var users = require('../controllers/users_controller');
 
@@ -20,15 +20,14 @@ router.get('/', function(req, res){
     }
 });
 
-// Maybe here have a function that gets a list of chats/pics/whatever we end up 
-// storing from the database and returns it without redirecting to a new page
-/*
-router.get('/chats', function(req, res){
-  console.log("GET chats called");
+// Maybe here have a function that gets a list of notes from the db and returns it, without redirecting to a new page
+ 
+router.get('/notes', function(req, res){
+  console.log("GET notes called");
+
   
-  
-}
-*/
+});
+
 
 
 router.get('/user', function(req, res){
