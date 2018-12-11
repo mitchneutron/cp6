@@ -13,7 +13,7 @@ exports.signup = function(req, res){
   user.set('hashed_password', hashPW(req.body.password));
   console.log("after hashing user exports.signup");
   user.set('email', req.body.email);
-  user.set('color', 'none'); // until they set one, they don't have one
+  user.set('note', ' '); // until they set one, they don't have one
   console.log("after email user exports.signup");
   user.save(function(err) {
     console.log("In exports.signup");
