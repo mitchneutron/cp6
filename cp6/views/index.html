@@ -3,6 +3,8 @@
     
     <!-- for sierra: new IP for this is http://3.17.109.57:8080 --> 
     
+    <!-- This is the main home page! -->
+    
 <head>
     <title>CP6: CoolChat - Home</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
@@ -14,20 +16,20 @@
 <body>  
     <div class="inner-box">
         <div ng-controller="myController">
-            <h1 id="mainTitle">Welcome to CoolChat </h1>
-            
-            <p id="usernameText">Logged in as:  <%= username %> </p> <!-- it gets these vars from the index.js - I vote that we don't use EJS because it's super confusing-->
-            <a id="logoutLink" href="/logout">Log Out</a>
+            <h1 id="mainTitle">Welcome to CoolChat, <%= username %>!</h1>
+            <!-- it gets these vars from the index.js - I vote that we don't use EJS because it's super confusing-->
+            <!-- but also I'm not sure how to not use EJS with how the files are set up right now... -->
+            <a id="logoutLink" style="font-size:14px" href="/logout" >Log Out</a>
         </div>
         <hr>
-        <span id="indexMsg">
-            <%= msg %> 
-        </span>
+        <!--<span id="indexMsg">-->
+        <!--    <%= msg %> -->
+        <!--</span>-->
         <hr>
-        <span id="colorText">
-        Favorite Color: 
-            <%= color %>
-          </span>
+        <!--<span id="colorText">-->
+        <!--Favorite Color: -->
+        <!--    <%= color %>-->
+        <!--  </span>-->
     </div>
 </body>
       
