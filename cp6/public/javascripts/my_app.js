@@ -29,17 +29,16 @@ angular.module('myApp', []).
       $scope.getAllNotes = function() {
         console.log(">GetAllNotes() called");
         return $http.get('/notes').success(function(data){
-          console.log(">GetAll(): Success, got response ");
+          console.log(">GetAllNotes(): Success, got response ");
           console.dir(data);
           
-          angular.copy(data, $scope.allNotes);  //this copies the stuff coming back from the REST call into the scope array
+          //angular.copy(data, $scope.allNotes);  //this copies the stuff coming back from the REST call into the scope array
         }).error(function(data){
-          console.log(">GetAll(): Error during GET: ", data);
+          console.log(">GetAllNotes(): Error during GET: ", data);
           
         });
       }; 
       $scope.getAllNotes(); //update the list of notes on the homepage asap
-    
     
     
   }]);

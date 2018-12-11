@@ -24,7 +24,7 @@ exports.signup = function(req, res){
     } else {
       req.session.user = user.id;
       req.session.username = user.username;
-      req.session.color= user.color;
+      req.session.note= user.note;
       req.session.msg = 'Authenticated as ' + user.username;
       res.redirect('/');
     }
@@ -44,7 +44,7 @@ exports.login = function(req, res){
         req.session.user = user.id;
         req.session.username = user.username;
         req.session.msg = 'Authenticated as ' + user.username;
-        req.session.color = user.color;
+        req.session.note = user.note;
         res.redirect('/');
       });
     }else{
