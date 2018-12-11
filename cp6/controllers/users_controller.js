@@ -71,6 +71,8 @@ exports.getUserProfile = function(req, res) {
 };
 
 exports.updateUser = function(req, res){
+  console.log("UPdate User:")
+  console.log(req.body)
   User.findOne({ _id: req.session.user })
   .exec(function(err, user) {
     user.set('note', req.body.note);
