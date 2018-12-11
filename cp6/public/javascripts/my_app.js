@@ -7,8 +7,8 @@ angular.module('myApp', []).
       $scope.user = {};
       $scope.error = "";
       $scope.allNotes = [
-        {username: "dog", content: "hello world this is dog"},  //TEMP DATA ONLY
-        {username: "foo", content: "bar bar bar bar bar bar"},
+        {username: "dog", note: "hello world this is dog"},  //TEMP DATA ONLY
+        {username: "foo", note: "bar bar bar bar bar bar"},
         ];
                                 
       // this is called first thing - checks if the current user is logged in and gets their data again
