@@ -12,8 +12,7 @@ router.get('/', function(req, res){
     if (req.session.user) {
       console.log("GET homepage called - with user, color= ", req.session.color);
       res.render('index', {username: req.session.username,  //this is where the EJS vars are passed to the HTML
-                           msg:req.session.msg,            //I don't really know how else to send these back and still render a new page... 
-                           color:req.session.color});     // fine maybe EJS is the best way to do this part. ugh
+                           msg:req.session.msg});              // fine maybe EJS is the best way to do this part. ugh   
     } else {
       console.log("GET homepage: user session not active");
       req.session.msg = 'Access denied! Please log in first';
