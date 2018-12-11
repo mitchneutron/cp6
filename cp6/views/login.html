@@ -2,32 +2,33 @@
 <html>
     
 <head>
-    <title>User Login and Sessions</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600" rel="stylesheet">
+    <title>CP6: CoolChat - Log In</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
 </head>
         
 <body>  
     <div class="inner-box">
-        <div class="form-container">
-            <h1>Log In</h1>
+        <div class="form-container" style="text-align:center;">
+            <h1>Log In To CoolChat</h1>
             <form method="POST" action="/login">
                 <label>Username:</label>
                 <input type="text" id="username" name="username"><br>
-                <label>Password:</label>
+                <label>Password:</label> 
                 <input type="password" id="password" name="password">
                 <br>
                 <br>
                 <input class="main-button" type="submit" id="login" value="Login">
             </form>
+            <!-- this reports what the server got for these credentials  -->
+            <span id="loginMsg" style="font-weight:bold">
+                <%= msg %>
+            </span>
         </div>
-        <br>
-        <a id="signUpLink" href="/signup">Sign Up</a>
+        <br><br>
         <hr>
+        <a id="signUpLink" href="/signup">Never been here before? Sign Up!</a>
         <br>
-        <span id="loginMsg" style="font-weight:bold">
-        <%= msg %>
-        </span>
     </div>
 </body>
         

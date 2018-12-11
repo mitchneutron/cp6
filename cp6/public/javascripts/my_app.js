@@ -3,6 +3,8 @@
 angular.module('myApp', []).
   controller('myController', ['$scope', '$http',
                               function($scope, $http) {
+                                
+    // this is called first thing - checks if the current user is logged in and gets their data again
     $http.get('/user/profile') .success(function(data, status, headers, config) {
       console.log(">>MyController: Got User: ", data);    
       

@@ -1,14 +1,21 @@
 body {
   padding: 40px;
-  background-color: #600029;
+  background-color: #e8f0ff;
   font: "Lucida Grande", sans-serif;
   
 }
 
 h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 38px;
-  font-weight: 600;
+  font-family: 'PT Sans Caption', sans-serif;
+  font-size: 45px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+h2 { 
+  font-family: 'PT Sans Caption', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 a {
@@ -16,34 +23,34 @@ a {
 }
 
 .inner-box {
-  padding: 50px;
-  background-color: #f2f1e3;
+  padding: 30px;
+  background-color: #ffffff;
   border-style: solid;
   border-radius: 5px;
   border-width: 2px;
-  border-color: black;
-  box-shadow: 0px 0px 20px #ffffff;
+  border-color: #1f2a3f;
+  box-shadow: 0px 0px 20px #3b5077;
   
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'PT Sans Caption', sans-serif;
   font-size: 20px;
-  font-weight: 300;
 }
 
 .main-button {
-  -webkit-transition-duration: 0.3s; /* Safari */
-  -moz-transition-duration: 0.3s; /* Firefox */
-  transition-duration: 0.3s;
+  -webkit-transition-duration: 0.25s; /* Safari */
+  -moz-transition-duration: 0.25s; /* Firefox */
+  transition-duration: 0.25s;
   
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  background-color: #e8f0ff;
+  font-family: 'PT Sans Caption', sans-serif;
+  font-size: 16px;
   border: none;
-  padding: 5px 10px;
+  padding: 10px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
 }
 
 .main-button:hover {
-  background-color: #600029;
+  background-color: #142b56;
   color: white; /* text color */
 }
