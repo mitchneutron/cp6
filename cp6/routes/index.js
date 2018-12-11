@@ -10,7 +10,7 @@ router.get('/', function(req, res){
     console.log("/t" + req.session);
     
     if (req.session.user) {
-      console.log("GET homepage called - with user, color= ", req.session.color);
+      console.log("GET homepage called - with user, note= ", req.session.note);
       res.render('index', {username: req.session.username,  //this is where the EJS vars are passed to the HTML
                            msg:req.session.msg});              // fine maybe EJS is the best way to do this part. ugh   
     } else {

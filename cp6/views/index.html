@@ -17,13 +17,21 @@
         <div ng-controller="myController">
             <h1 id="mainTitle">Welcome to CoolNotes, <%= username %>!</h1>
             <a id="logoutLink" style="font-size:14px" href="/logout" >Log Out</a>
-            <a id="editLink" href="/user">&nbsp Edit Your Note</a>
+            <a id="editLink"  style="font-size:14px" href="/user">&nbsp Edit Your Note</a>
         </div>
+        
         <hr>
+        <h2> All CoolNotes </h2>
+        
+            <div ng-repeat="n in allNotes"> 
+                {{n.username}}: <br>
+                {{n.note}}
+            </div>
+        
+        
         <!--<span id="indexMsg">-->
         <!--    <%= msg %> -->
         <!--</span>-->
-        <hr>
     </div>
 </body>
       
