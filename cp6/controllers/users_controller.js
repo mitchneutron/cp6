@@ -73,14 +73,13 @@ exports.getUserProfile = function(req, res) {
 exports.updateUser = function(req, res){
   User.findOne({ _id: req.session.user })
   .exec(function(err, user) {
-    user.set('email', req.body.email);
-    user.set('color', req.body.color);
+    user.set('note', req.body.note);
     user.save(function(err) {
       if (err){
         res.sessor.error = err;
       } else {
         req.session.msg = 'User Updated.';
-        req.session.color = req.body.color;
+        req.session.note = req.body.note;
       }
       res.redirect('/user');
     });
