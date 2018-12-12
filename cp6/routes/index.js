@@ -23,18 +23,31 @@ router.get('/', function(req, res){
 // Maybe here have a function that gets a list of notes from the db and returns it, without redirecting to a new page
  
 router.get('/notes', function(req, res, next){
-  console.log("GET all notes called");
+  console.log(">GET all notes called");
   
-  User.find(function(err, users){ //calling FIND on the mongoose schema obj
-    if(err){ return next(err); } //pass execution forward in the call stack
+  User.find().lean().exec(function(err, usersResult){ //calling FIND on the mongoose schema obj
+      if(err){ 
+        console.log(">GET all notes: Error during User.find: ", err);
+        return next(err); 
+      } //pass execution forward in the call stack
     
-    console.log("GET notes: got users " + users);
+    var usersJSON = JSON.parse(usersResult);
+    console.log(">GET notes: usersJSON= ");
+    console.dir(usersJSON);
+    
     //pull out each user's note and put into an array (mapping username: noteContent), then return that array 
-    for (var u = 0; u < users.length; u++) {
+    var notesArr = [];
+    for (var u = 0; u < usersResult.length; u++) {
+      console.log(">GET notes: usersJSON[u] = ");
+      console.dir(usersJSON[u]);
       
+      notesArr.push( {username: usersJSON[u].username,  note: usersJSON[u].note} );
     }
     
-    //res.json(users);
+    console.log(">GET notes: returning JSON: ");
+    console.dir(notesArr);
+    
+    res.json(notesArr);
   });
   
 });
