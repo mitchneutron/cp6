@@ -10,10 +10,7 @@ angular.module('myApp', []).controller('myController', ['$scope', '$http',
     }
     $scope.user = {};
     $scope.error = "";
-    $scope.allNotes = [
-      { username: "dog", note: "hello world this is dog" }, //TEMP DATA ONLY
-      { username: "foo", note: "bar bar bar bar bar bar" },
-    ];
+    $scope.allNotes = [];
 
     // this is called first thing - checks if the current user is logged in and gets their data again
     $http.get('/user/profile').success(function(data, status, headers, config) {
@@ -50,7 +47,7 @@ angular.module('myApp', []).controller('myController', ['$scope', '$http',
         console.log(">GetAllNotes(): Success, got response: ");
         console.dir(data);
         
-        //angular.copy(data, $scope.allNotes);  //this copies the stuff coming back from the REST call into the scope array
+        angular.copy(data, $scope.allNotes);  //this copies the stuff coming back from the REST call into the scope array
       }).error(function(data){
         console.log(">GetAllNotes(): Error during GET: ", data);
         

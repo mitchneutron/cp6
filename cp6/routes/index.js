@@ -33,8 +33,6 @@ router.get('/notes', function(req, res, next){
     
     var usersJSON = JSON.stringify(usersResult);
     usersJSON = JSON.parse(usersJSON);
-    console.log(">GET notes: usersJSON= ");
-    console.dir(usersJSON);
     
     //pull out each user's note and put into an array (mapping username: noteContent), then return that array 
     var notesArr = [];
@@ -42,8 +40,8 @@ router.get('/notes', function(req, res, next){
       notesArr.push( {username: usersJSON[u].username,  note: usersJSON[u].note} );
     }
     
-    console.log(">GET notes: returning JSON: ");
-    console.dir(notesArr);
+    // console.log(">GET notes: returning JSON: ");
+    // console.dir(notesArr);
     
     res.json(notesArr);
   });
