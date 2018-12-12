@@ -44,9 +44,6 @@ angular.module('myApp', []).controller('myController', ['$scope', '$http',
     $scope.getAllNotes = function() {
       console.log(">GetAllNotes() called");
       return $http.get('/notes').success(function(data){
-        console.log(">GetAllNotes(): Success, got response: ");
-        console.dir(data);
-        
         angular.copy(data, $scope.allNotes);  //this copies the stuff coming back from the REST call into the scope array
       }).error(function(data){
         console.log(">GetAllNotes(): Error during GET: ", data);
