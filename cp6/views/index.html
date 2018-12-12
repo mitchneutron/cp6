@@ -1,38 +1,45 @@
 <!doctype html>
-<html ng-app="myApp"> 
-    
-    <!-- for sierra: new IP for this is http://3.17.109.57:8080 --> 
-    
-    <!-- This is the main home page! -->
+<html ng-app="myApp">
+
+<!-- for sierra: new IP for this is http://3.17.109.57:8080 -->
+
+<!-- This is the main home page! -->
+
 <head>
     <title>CP6: CoolNotes - Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
     <script src="/javascripts/my_app.js"></script>
 </head>
-        
-<body>  
+
+<body>
     <div class="inner-box">
         <div ng-controller="myController">
-            <h1 id="mainTitle">Welcome to CoolNotes, <%= username %>!</h1>
-            <a id="logoutLink" style="font-size:14px" href="/logout" >Log Out</a>
-            <a id="editLink"  style="font-size:14px" href="/user">&nbsp Edit Your Note</a>
+            <h1 id="mainTitle">Welcome to CoolNotes,
+                <%= username %>!</h1>
+            <a id="logoutLink" style="font-size:14px" href="/logout">Log Out</a>
+            <a id="editLink" style="font-size:14px" href="/user">&nbsp Edit Your Note</a>
+            <hr>
+            <h2> All CoolNotes </h2>
+
+            <ul>
+                <li ng-repeat="item in allNotes">
+                    {{item.username}}: <br> 
+                    <div class="well">{{item.note}}</div>
+                </li>
+            </ul>
         </div>
-        
-        <hr>
-        <h2> All CoolNotes </h2>
-        
-            <div ng-repeat="n in allNotes"> 
-                {{n.username}}: <br>
-                {{n.note}}
-            </div>
-        
-        
+
+
+
+
         <!--<span id="indexMsg">-->
         <!--    <%= msg %> -->
         <!--</span>-->
     </div>
 </body>
-      
+
 </html>
