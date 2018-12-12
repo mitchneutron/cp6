@@ -54,3 +54,9 @@ a {
   background-color: #142b56;
   color: white; /* text color */
 }
+
+.notebox {
+  padding: 5px 5px;
+  font-size: 14px;
+  height: 50%;
+}

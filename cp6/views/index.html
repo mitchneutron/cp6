@@ -30,19 +30,12 @@
             <h2> All CoolNotes </h2>
 
             <ul>
-                <li ng-repeat="item in allNotes">
-                    {{item.username}}: <br>
+                <li class="notebox" ng-repeat="item in allNotes">
+                    <b>{{item.username}}</b> says: <br>
                     <div class="well">{{item.note}}</div>
                 </li>
             </ul>
         </div>
-
-
-
-
-        <!--<span id="indexMsg">-->
-        <!--    <%= msg %> -->
-        <!--</span>-->
     </div>
 </body>
 
