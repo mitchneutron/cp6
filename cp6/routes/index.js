@@ -31,16 +31,14 @@ router.get('/notes', function(req, res, next){
         return next(err); 
       } //pass execution forward in the call stack
     
-    var usersJSON = JSON.parse(usersResult);
+    var usersJSON = JSON.stringify(usersResult);
+    usersJSON = JSON.parse(usersJSON);
     console.log(">GET notes: usersJSON= ");
     console.dir(usersJSON);
     
     //pull out each user's note and put into an array (mapping username: noteContent), then return that array 
     var notesArr = [];
     for (var u = 0; u < usersResult.length; u++) {
-      console.log(">GET notes: usersJSON[u] = ");
-      console.dir(usersJSON[u]);
-      
       notesArr.push( {username: usersJSON[u].username,  note: usersJSON[u].note} );
     }
     
