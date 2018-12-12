@@ -30,6 +30,9 @@ router.get('/notes', function(req, res, next){
     
     console.log("GET notes: got users " + users);
     //pull out each user's note and put into an array (mapping username: noteContent), then return that array 
+    for (var u = 0; u < users.length; u++) {
+      
+    }
     
     //res.json(users);
   });
